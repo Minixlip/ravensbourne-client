@@ -87,7 +87,7 @@ const Register = () => {
       </div>
 
       <div>
-        <div className="flex h-[100vh] dashboard-bg  lg:flex-row justify-center items-center">
+        <div className="flex min-h-[100vh] dashboard-bg  lg:flex-row justify-center items-center">
           <AnimatePresence>
             <motion.div
               initial={{ opacity: 0 }}
