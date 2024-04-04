@@ -36,7 +36,7 @@ const SignIn = () => {
 
   return (
     <section className="relative">
-      <div className="absolute w-full ">
+      <div className="w-full ">
         <Header />
       </div>
       <div className=" dashboard-bg">
