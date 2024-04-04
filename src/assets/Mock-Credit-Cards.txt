@@ -1,0 +1,35 @@
+[
+	{
+		"network": "Visa",
+		"credit_card_number": "4931812136440",
+		"cvv": "625",
+		"expiry_date": "10/2030",
+		"card_holder_name": "Noah Roberts",
+		"validation": "https://dnschecker.org/credit-card-validator.php?ccn=4931812136440"
+	},
+	{
+		"network": "Visa",
+		"credit_card_number": "4931819276138798",
+		"cvv": "512",
+		"expiry_date": "2/2030",
+		"card_holder_name": "Emma Davis",
+		"validation": "https://dnschecker.org/credit-card-validator.php?ccn=4931819276138798"
+	},
+	{
+		"network": "Visa",
+		"credit_card_number": "4931810439895",
+		"cvv": "408",
+		"expiry_date": "1/2030",
+		"card_holder_name": "Isabella Baker",
+		"validation": "https://dnschecker.org/credit-card-validator.php?ccn=4931810439895"
+	},
+	{
+		"network": "Visa",
+		"credit_card_number": "4931810754529632",
+		"cvv": "756",
+		"expiry_date": "4/2030",
+		"card_holder_name": "Julia Smith",
+		"validation": "https://dnschecker.org/credit-card-validator.php?ccn=4931810754529632"
+	},
+	
+]
