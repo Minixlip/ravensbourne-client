@@ -452,7 +452,7 @@ const Home = () => {
             </motion.div>
           </div>
           <section>
-            <div className="h-[220vh] lg:h-[100vh]">
+            <div className="h-[240vh] lg:h-[100vh]">
               <div className="flex flex-col ">
                 <motion.span
                   initial={{ opacity: 0 }}
