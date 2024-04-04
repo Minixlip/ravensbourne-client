@@ -1,34 +1,34 @@
 /* eslint-disable react/prop-types */
-import Header from '../components/Header';
-import { useState, useEffect } from 'react';
-import { useAuthContext } from '../hooks/useAuthContext';
-import CreditCard from '../components/tickets/CreditCard';
-import { FaChevronRight, FaExclamationTriangle } from 'react-icons/fa';
-import { useCheckTicket } from '../hooks/useCheckTicket';
-import { motion } from 'framer-motion';
-import ErrorPopUp from '../components/ErrorPopUp';
-import eventPhoto from '../assets/eric-esma.jpg';
-import o2Photo from '../assets/02-arena.jpg';
+import Header from "../components/Header";
+import { useState, useEffect } from "react";
+import { useAuthContext } from "../hooks/useAuthContext";
+import CreditCard from "../components/tickets/CreditCard";
+import { FaChevronRight, FaExclamationTriangle } from "react-icons/fa";
+import { useCheckTicket } from "../hooks/useCheckTicket";
+import { motion } from "framer-motion";
+import ErrorPopUp from "../components/ErrorPopUp";
+import eventPhoto from "../assets/eric-esma.jpg";
+import o2Photo from "../assets/02-arena.jpg";
 
 const Payment = ({ eventName }) => {
   const { user } = useAuthContext();
   const { checkTicket, error, isLoading, resTicket, success } =
     useCheckTicket();
   const [data, setData] = useState({
-    emailAddress: user ? user.emailAddress : '',
-    userId: user ? user.userid : '',
-    firstName: user ? user.firstName : '',
-    surName: user ? user.surName : '',
-    event: eventName ? eventName : 'Ravensbourne Graduation Party',
-    firstGuestName: '',
-    firstGuestDOB: '',
-    secondGuestName: '',
-    secondGuestDOB: '',
+    emailAddress: user ? user.emailAddress : "",
+    userId: user ? user.userid : "",
+    firstName: user ? user.firstName : "",
+    surName: user ? user.surName : "",
+    event: eventName ? eventName : "Ravensbourne Graduation Party",
+    firstGuestName: "",
+    firstGuestDOB: "",
+    secondGuestName: "",
+    secondGuestDOB: "",
     guestCount: 0,
   });
 
   const [validData, setValidData] = useState(false);
-  const [visiblityForm, setVisiblityForm] = useState('flex');
+  const [visiblityForm, setVisiblityForm] = useState("flex");
   const [errorInput, setErrorInput] = useState(null);
   const [step, setStep] = useState(1);
   const [privacyCheck, setPrivacycheck] = useState(false);
@@ -46,7 +46,7 @@ const Payment = ({ eventName }) => {
 
   useEffect(() => {
     if (success) {
-      setVisiblityForm('none');
+      setVisiblityForm("none");
       setStep(2);
     }
   }, [success]);
@@ -85,18 +85,18 @@ const Payment = ({ eventName }) => {
       }
     }
     setValidData(false);
-    setErrorInput('Please fill out all details');
+    setErrorInput("Please fill out all details");
   };
 
   const HandleClick = (e) => {
     e.preventDefault();
     const { value, id } = e.target;
 
-    if (id === 'guestCount') {
+    if (id === "guestCount") {
       setData({
         ...data,
-        firstGuestName: '',
-        secondGuestName: '',
+        firstGuestName: "",
+        secondGuestName: "",
         guestCount: parseInt(value),
       });
       return;
@@ -110,9 +110,9 @@ const Payment = ({ eventName }) => {
     const { value, id } = e.target;
 
     // Validation for guest names (only allow letters and spaces)
-    if (id.includes('GuestName')) {
+    if (id.includes("GuestName")) {
       const nameRegex = /^[a-zA-Z\s]+$/;
-      if (nameRegex.test(value) || value === '') {
+      if (nameRegex.test(value) || value === "") {
         setData({ ...data, [id]: value });
       }
       return;
@@ -138,22 +138,22 @@ const Payment = ({ eventName }) => {
 
       <div
         id="options"
-        className="mx-2  gap-y-4  xl:h-[160vh] xl:flex-row  flex-col-reverse flex justify-center gap-x-10 "
+        className="mx-2  gap-y-4 h-[160vh] xl:h-[160vh] xl:flex-row  flex-col-reverse flex justify-center gap-x-10 "
       >
         <form className=" flex flex-col justify-start lg:pt-24">
           <div className="flex flex-col max-w-[700px]">
             <motion.div
               initial={{
-                background: 'linear-gradient(280deg, #0a0a0a 0%, #171717 40%)',
+                background: "linear-gradient(280deg, #0a0a0a 0%, #171717 40%)",
               }}
               animate={{
-                background: 'linear-gradient(80deg, #0a0a0a 0%, #171717 40%)',
+                background: "linear-gradient(80deg, #0a0a0a 0%, #171717 40%)",
               }}
               transition={{
-                ease: 'easeInOut',
+                ease: "easeInOut",
                 duration: 4,
                 repeat: Infinity,
-                repeatType: 'reverse',
+                repeatType: "reverse",
               }}
               className="flex flex-col justify-center items-center rounded-2xl rounded-b-none py-4"
             >
@@ -162,13 +162,13 @@ const Payment = ({ eventName }) => {
             <hr />
             <motion.div
               initial={{
-                background: 'linear-gradient(280deg, #0a0a0a 0%, #171717 40%)',
+                background: "linear-gradient(280deg, #0a0a0a 0%, #171717 40%)",
               }}
               transition={{
-                ease: 'easeInOut',
+                ease: "easeInOut",
                 duration: 4,
                 repeat: Infinity,
-                repeatType: 'reverse',
+                repeatType: "reverse",
               }}
               className="text-white flex px-6 py-4 justify-center items-center"
             >
@@ -176,8 +176,8 @@ const Payment = ({ eventName }) => {
                 <span
                   className={
                     step === 1
-                      ? 'bg-blue-800 px-4 py-2 rounded-full'
-                      : 'px-4 py-2 border rounded-full border-gray-500 text-gray-500'
+                      ? "bg-blue-800 px-4 py-2 rounded-full"
+                      : "px-4 py-2 border rounded-full border-gray-500 text-gray-500"
                   }
                 >
                   1
@@ -189,8 +189,8 @@ const Payment = ({ eventName }) => {
                 <span
                   className={
                     step === 2
-                      ? 'bg-blue-800 px-4 py-2 rounded-full'
-                      : 'px-4 py-2 border rounded-full border-gray-500 text-gray-500'
+                      ? "bg-blue-800 px-4 py-2 rounded-full"
+                      : "px-4 py-2 border rounded-full border-gray-500 text-gray-500"
                   }
                 >
                   2
@@ -202,8 +202,8 @@ const Payment = ({ eventName }) => {
                 <span
                   className={
                     step === 3
-                      ? 'bg-blue-800 px-4 py-2 rounded-full'
-                      : 'px-4 py-2 border rounded-full border-gray-500 text-gray-500'
+                      ? "bg-blue-800 px-4 py-2 rounded-full"
+                      : "px-4 py-2 border rounded-full border-gray-500 text-gray-500"
                   }
                 >
                   3
@@ -214,13 +214,13 @@ const Payment = ({ eventName }) => {
             <div className="h-[10px] bg-yellow-500"></div>
             <motion.div
               initial={{
-                background: 'linear-gradient(280deg, #0a0a0a 0%, #171717 40%)',
+                background: "linear-gradient(280deg, #0a0a0a 0%, #171717 40%)",
               }}
               transition={{
-                ease: 'easeInOut',
+                ease: "easeInOut",
                 duration: 4,
                 repeat: Infinity,
-                repeatType: 'reverse',
+                repeatType: "reverse",
               }}
             >
               <div className="flex px-6 py-5 gap-2 items-center">
@@ -236,13 +236,13 @@ const Payment = ({ eventName }) => {
             <motion.div
               style={{ display: visiblityForm }}
               initial={{
-                background: 'linear-gradient(280deg, #0a0a0a 0%, #171717 40%)',
+                background: "linear-gradient(280deg, #0a0a0a 0%, #171717 40%)",
               }}
               transition={{
-                ease: 'easeInOut',
+                ease: "easeInOut",
                 duration: 4,
                 repeat: Infinity,
-                repeatType: 'reverse',
+                repeatType: "reverse",
               }}
               className=" flex-col mt-4"
             >
@@ -272,13 +272,13 @@ const Payment = ({ eventName }) => {
             <motion.div
               style={{ display: visiblityForm }}
               initial={{
-                background: 'linear-gradient(280deg, #0a0a0a 0%, #171717 40%)',
+                background: "linear-gradient(280deg, #0a0a0a 0%, #171717 40%)",
               }}
               transition={{
-                ease: 'easeInOut',
+                ease: "easeInOut",
                 duration: 4,
                 repeat: Infinity,
-                repeatType: 'reverse',
+                repeatType: "reverse",
               }}
               className="mt-2 px-6 py-4 flex-col"
             >
@@ -327,10 +327,7 @@ const Payment = ({ eventName }) => {
               <div className="flex flex-col lg:flex-row gap-6">
                 {data.guestCount >= 1 && (
                   <div className="flex flex-col rounded-2xl max-w-[50%] mt-4 gap-2 ">
-                    <label
-                      htmlFor="firstGuestName"
-                      className=" sr-only"
-                    >
+                    <label htmlFor="firstGuestName" className=" sr-only">
                       Guest 1 Full Name
                     </label>
                     <input
@@ -355,10 +352,7 @@ const Payment = ({ eventName }) => {
                 )}
                 {data.guestCount >= 2 && (
                   <div className="flex flex-col rounded-2xl  mt-4 gap-2 max-w-[50%]">
-                    <label
-                      htmlFor="secondGuestName"
-                      className="sr-only"
-                    >
+                    <label htmlFor="secondGuestName" className="sr-only">
                       Guest 2 Full Name
                     </label>
                     <input
@@ -386,21 +380,18 @@ const Payment = ({ eventName }) => {
             <motion.div
               style={{ display: visiblityForm }}
               initial={{
-                background: 'linear-gradient(280deg, #0a0a0a 0%, #171717 40%)',
+                background: "linear-gradient(280deg, #0a0a0a 0%, #171717 40%)",
               }}
               transition={{
-                ease: 'easeInOut',
+                ease: "easeInOut",
                 duration: 4,
                 repeat: Infinity,
-                repeatType: 'reverse',
+                repeatType: "reverse",
               }}
               className="flex-col mt-4 px-8 py-6"
             >
               <div className="flex gap-4 items-center">
-                <label
-                  htmlFor="ticketPolicy"
-                  className="sr-only"
-                >
+                <label htmlFor="ticketPolicy" className="sr-only">
                   Ticket Exchange Policy
                 </label>
                 <input
@@ -411,11 +402,8 @@ const Payment = ({ eventName }) => {
                   onChange={() => setPrivacycheck(!privacyCheck)}
                 />
                 <span>
-                  I agree to the{' '}
-                  <a
-                    href="/"
-                    className="text-blue-500"
-                  >
+                  I agree to the{" "}
+                  <a href="/" className="text-blue-500">
                     Ticket Exchange Policy
                   </a>
                 </span>
@@ -424,19 +412,19 @@ const Payment = ({ eventName }) => {
                 <span>Please also note:</span>
                 <ul className="mt-6 flex flex-col gap-2">
                   <li className="text-white font-semibold">
-                    a{')'} Resale Tickets cannot be exchanged or refunded after
-                    purchase, save as provided in our Ticket Exchange Policy.{' '}
+                    a{")"} Resale Tickets cannot be exchanged or refunded after
+                    purchase, save as provided in our Ticket Exchange Policy.{" "}
                   </li>
                   <li>
-                    b{')'} We may cancel any order{'(s)'} in breach of our
-                    Ticket Exchange Policy without notice.{' '}
+                    b{")"} We may cancel any order{"(s)"} in breach of our
+                    Ticket Exchange Policy without notice.{" "}
                   </li>
                   <li>
-                    c{')'} All orders are subject to account approval and
+                    c{")"} All orders are subject to account approval and
                     billing address verification.
                   </li>
                   <li>
-                    d{')'} We will provide the organiser of this event with your
+                    d{")"} We will provide the organiser of this event with your
                     information for the purposes of event management, analytics,
                     marketing (where you have consented) and as further
                     described in their privacy policy. The organiser may
@@ -448,27 +436,21 @@ const Payment = ({ eventName }) => {
                 </ul>
               </div>
             </motion.div>
-            <div
-              style={{ display: visiblityForm }}
-              className=" justify-center"
-            >
+            <div style={{ display: visiblityForm }} className=" justify-center">
               <button
                 disabled={isLoading}
                 onClick={(e) =>
                   privacyCheck
                     ? handleSubmit(e)
                     : setErrorInput(
-                        'Please read the ticket policy and click it to confirm'
+                        "Please read the ticket policy and click it to confirm"
                       )
                 }
                 className="btn1 w-fit mt-7 hover:gap-4 transition-all ease-in-out duration-200"
                 type="submit"
               >
                 Proceed to payment
-                <FaChevronRight
-                  size={'11px'}
-                  color="#70757E"
-                />
+                <FaChevronRight size={"11px"} color="#70757E" />
               </button>
             </div>
             {validData && !error && (
@@ -482,49 +464,40 @@ const Payment = ({ eventName }) => {
                   opacity: 1,
                 }}
                 transition={{
-                  ease: 'easeInOut',
+                  ease: "easeInOut",
                   duration: 0.5,
                 }}
                 className="flex-1 "
               >
-                <CreditCard
-                  resTicket={resTicket}
-                  data={data}
-                />
+                <CreditCard resTicket={resTicket} data={data} />
               </motion.div>
             )}
           </div>
 
           {error && <ErrorPopUp error={error} />}
           {errorInput && (
-            <ErrorPopUp
-              error={errorInput}
-              setError={setErrorInput}
-            />
+            <ErrorPopUp error={errorInput} setError={setErrorInput} />
           )}
         </form>
 
         <div className=" flex pt-24 flex-col max-w-[700px]  ">
           <motion.div
             initial={{
-              background: 'linear-gradient(280deg, #0a0a0a 0%, #171717 40%)',
+              background: "linear-gradient(280deg, #0a0a0a 0%, #171717 40%)",
             }}
             animate={{
-              background: 'linear-gradient(80deg, #0a0a0a 0%, #171717 40%)',
+              background: "linear-gradient(80deg, #0a0a0a 0%, #171717 40%)",
             }}
             transition={{
-              ease: 'easeInOut',
+              ease: "easeInOut",
               duration: 4,
               repeat: Infinity,
-              repeatType: 'reverse',
+              repeatType: "reverse",
             }}
             className="flex px-6 py-5 rounded-lg rounded-b-none items-center gap-4"
           >
             <div className="flex h-[100px]">
-              <img
-                src={eventPhoto}
-                className="max-h-full px-2 rounded-lg"
-              />
+              <img src={eventPhoto} className="max-h-full px-2 rounded-lg" />
             </div>
             <div className="flex-1 flex flex-col text-white">
               <span className="font-bold mb-4">{data.event}</span>
@@ -550,13 +523,13 @@ const Payment = ({ eventName }) => {
           </div>
           <motion.div
             initial={{
-              background: 'linear-gradient(280deg, #0a0a0a 0%, #171717 40%)',
+              background: "linear-gradient(280deg, #0a0a0a 0%, #171717 40%)",
             }}
             transition={{
-              ease: 'easeInOut',
+              ease: "easeInOut",
               duration: 4,
               repeat: Infinity,
-              repeatType: 'reverse',
+              repeatType: "reverse",
             }}
           >
             <div className="py-8 px-6">
@@ -571,13 +544,13 @@ const Payment = ({ eventName }) => {
           <hr />
           <motion.div
             initial={{
-              background: 'linear-gradient(280deg, #0a0a0a 0%, #171717 40%)',
+              background: "linear-gradient(280deg, #0a0a0a 0%, #171717 40%)",
             }}
             transition={{
-              ease: 'easeInOut',
+              ease: "easeInOut",
               duration: 4,
               repeat: Infinity,
-              repeatType: 'reverse',
+              repeatType: "reverse",
             }}
             className="flex flex-col"
           >
@@ -593,13 +566,13 @@ const Payment = ({ eventName }) => {
           <hr />
           <motion.div
             initial={{
-              background: 'linear-gradient(280deg, #0a0a0a 0%, #171717 40%)',
+              background: "linear-gradient(280deg, #0a0a0a 0%, #171717 40%)",
             }}
             transition={{
-              ease: 'easeInOut',
+              ease: "easeInOut",
               duration: 4,
               repeat: Infinity,
-              repeatType: 'reverse',
+              repeatType: "reverse",
             }}
             className="flex flex-col"
           >
@@ -615,33 +588,30 @@ const Payment = ({ eventName }) => {
           <hr />
           <motion.div
             initial={{
-              background: 'linear-gradient(280deg, #0a0a0a 0%, #171717 40%)',
+              background: "linear-gradient(280deg, #0a0a0a 0%, #171717 40%)",
             }}
             transition={{
-              ease: 'easeInOut',
+              ease: "easeInOut",
               duration: 4,
               repeat: Infinity,
-              repeatType: 'reverse',
+              repeatType: "reverse",
             }}
             className=""
           >
             <div className="px-6 py-8 flex justify-center">
-              <img
-                src={o2Photo}
-                className="max-h-[200px] rounded-md"
-              />
+              <img src={o2Photo} className="max-h-[200px] rounded-md" />
             </div>
           </motion.div>
           <hr />
           <motion.div
             initial={{
-              background: 'linear-gradient(280deg, #0a0a0a 0%, #171717 40%)',
+              background: "linear-gradient(280deg, #0a0a0a 0%, #171717 40%)",
             }}
             transition={{
-              ease: 'easeInOut',
+              ease: "easeInOut",
               duration: 4,
               repeat: Infinity,
-              repeatType: 'reverse',
+              repeatType: "reverse",
             }}
             className="h-[100px] rounded-b-xl"
           ></motion.div>
