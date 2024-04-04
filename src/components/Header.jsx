@@ -70,8 +70,11 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="flex-1  flex items-center  justify-end ">
-          <LanguageMenuHeader />
+        <div className="sm:flex-1  flex items-center  justify-end ">
+          <div className="hidden sm:inline-flex">
+            <LanguageMenuHeader />
+          </div>
+
           {user ? (
             <UserMenuHeader
               username={user.firstName}
@@ -80,14 +83,14 @@ const Header = () => {
               HandleLogOut={HandleClick}
             />
           ) : (
-            <div className="flex">
+            <div className="flex ">
               <Link to={'/SignIn'}>
-                <button className=" flex justify-center items-end text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75  mr-4 py-2 px-6 rounded-lg text-primaryTxt bg-zinc-800 text-nowrap">
+                <button className=" flex justify-center items-end text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75  mr-4 py-2 px-2 lg:px-6 rounded-lg text-primaryTxt bg-zinc-800 text-nowrap">
                   Sign In
                 </button>
               </Link>
               <Link to={'/Register'}>
-                <button className=" flex justify-center items-end text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75  mr-4 py-2 px-6 rounded-lg text-primaryTxt bg-zinc-800 text-nowrap">
+                <button className=" flex justify-center items-end text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75  mr-4 py-2 px-2 lg:px-6 rounded-lg text-primaryTxt bg-zinc-800 text-nowrap">
                   Register
                 </button>
               </Link>

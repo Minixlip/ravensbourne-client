@@ -116,7 +116,7 @@ export default function LanguageMenuHeader() {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="absolute z-50 right-0 mt-2 w-56 px-4 pb-2 origin-top-right rounded-sm bg-white  shadow-lg ring-1 ring-black/5 focus:outline-none border-t-4 border-red-600">
+              <Menu.Items className="absolute z-50  left-0 sm:right-0 left mt-2 w-56 px-4 pb-2 origin-top-right rounded-sm bg-white  shadow-lg ring-1 ring-black/5 focus:outline-none border-t-4 border-red-600">
                 <div className="px-1 py-1 overflow-scroll h-[300px] no-scrollbar">
                   <div className="flex flex-col pb-4 pt-2">
                     <span className="text-primaryBtn">Change Language</span>

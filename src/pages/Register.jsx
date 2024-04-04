@@ -82,7 +82,7 @@ const Register = () => {
 
   return (
     <section className="">
-      <div className="absolute  w-full">
+      <div className="  w-full">
         <Header />
       </div>
 

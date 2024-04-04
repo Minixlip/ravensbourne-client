@@ -71,7 +71,7 @@ const RegisterName = ({
         onChange={HandleOnChange}
         size="3"
         id="gender"
-        className="bg-transparent text-black bg-white outline-none border-[2px] rounded-lg no-scrollbar "
+        className="bg-transparent py-4 text-black bg-white outline-none border-[2px] rounded-lg no-scrollbar "
         required
       >
         <option

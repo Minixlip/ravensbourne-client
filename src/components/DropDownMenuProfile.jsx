@@ -31,9 +31,9 @@ export default function UserMenuHeader({
       >
         <div>
           <div>
-            <Menu.Button className="inline-flex w-full justify-center pr-4 py-1 text-sm font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
+            <Menu.Button className="inline-flex  w-full justify-center pr-4 py-1  font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
               <span
-                className="flex items-end gap-2 mr-2  py-1 px-6 rounded-lg text-primaryTxt bg-zinc-800 text-base"
+                className="flex items-end gap-2 mr-2  py-1 px-6 rounded-lg text-primaryTxt bg-zinc-800 text-[10px] lg:text-sm"
                 aria-hidden="true"
               >
                 {username.charAt(0)}
@@ -59,7 +59,7 @@ export default function UserMenuHeader({
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="absolute z-50 right-0 mt-2 w-56 px-4 pb-2 origin-top-right rounded-sm bg-zinc-800  shadow-lg ring-1 ring-black/5 focus:outline-none border-t-4 border-red-600">
+              <Menu.Items className="absolute z-50 right-10 lg:right-0 mt-2 w-56 px-4 pb-2 origin-top-right rounded-sm bg-zinc-800  shadow-lg ring-1 ring-black/5 focus:outline-none border-t-4 border-red-600">
                 <div className="px-1 py-1 ">
                   <div className="flex flex-col pb-4 pt-2">
                     <span className="text-primaryTxt">
