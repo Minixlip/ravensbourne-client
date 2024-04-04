@@ -138,7 +138,7 @@ const Payment = ({ eventName }) => {
 
       <div
         id="options"
-        className="mx-2  gap-y-4 h-[160vh] xl:h-[160vh] xl:flex-row  flex-col-reverse flex justify-center gap-x-10 "
+        className="mx-2  gap-y-4 h-[160vh] xl:h-[180vh] xl:flex-row  flex-col-reverse flex justify-center gap-x-10 "
       >
         <form className=" flex flex-col justify-start lg:pt-24">
           <div className="flex flex-col max-w-[700px]">
