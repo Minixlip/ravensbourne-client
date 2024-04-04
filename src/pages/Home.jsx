@@ -167,7 +167,7 @@ const Home = () => {
         <div className=" relative ml-4 lg:flex-1 flex justify-center items-end homeBgImg  bg-center bg-cover"></div>
       </div>
       <section className="home-bg-2">
-        <div className="h-[300vh] lg:h-[185vh] flex flex-col pt-10 home-bg2 ">
+        <div className="h-[320vh] lg:h-[185vh] flex flex-col pt-10 home-bg2 ">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -366,13 +366,13 @@ const Home = () => {
                 </div>
               </motion.div>
             </div>
-            <div className="pt-40 flex justify-center items-center">
+            <div className="pt-20 flex justify-center items-center">
               <span className="text-2xl tracking-wider select-none">
                 Sponsors
               </span>
             </div>
             <div className="mt-10">
-              <div className="relative w-full overflow-hidden">
+              <div className=" w-full overflow-hidden">
                 {/* Wrapping div for seamless looping */}
                 <motion.div
                   className="flex"
